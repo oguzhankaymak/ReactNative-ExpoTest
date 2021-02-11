@@ -4,9 +4,13 @@ import { fireEvent, render, waitFor } from "@testing-library/react-native";
 import Home from "../src/screens/Home";
 
 test("render Home Component", () => {
-  const { getByTestId, getByText, getAllByTestId, queryByText } = render(
-    <Home />
-  );
+  const {
+    getByTestId,
+    getByText,
+    getAllByTestId,
+    queryByText,
+    toJSON,
+  } = render(<Home />);
 
   const input = getByTestId("add-input");
   const button = getByTestId("add-button");
@@ -21,6 +25,7 @@ test("render Home Component", () => {
   const item1 = getByText("item1");
   expect(item1).toBeDefined();
 
+  expect(toJSON).toMatchSnapshot();
   fireEvent.press(getAllByTestId("delete")[0]);
   expect(queryByText("item0")).toBeNull();
 
