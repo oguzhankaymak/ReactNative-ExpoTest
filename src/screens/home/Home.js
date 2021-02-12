@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text } from "react-native";
-import AddItem from "../components/item/AddItem";
-import ListItem from "../components/item/ListItem";
+import AddItem from "../../components/item/AddItem";
+import ListItem from "../../components/item/ListItem";
 
 const Home = () => {
   const [data, setdata] = useState([]);
