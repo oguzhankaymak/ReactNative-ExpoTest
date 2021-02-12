@@ -7,6 +7,7 @@ const NavigationStack = createStackNavigator();
 
 //screens
 import Home from "../screens/home/Home";
+import ElectronicsScreen from "../screens/electronicsScreen/ElectronicsScreen";
 
 const Navigator = ({}) => {
   return (
@@ -17,6 +18,11 @@ const Navigator = ({}) => {
         })}
       >
         <NavigationStack.Screen name="home" component={Home} />
+        <NavigationStack.Screen
+          name="electronics"
+          component={ElectronicsScreen}
+          options={{ headerTitle: "Electronics" }}
+        />
       </NavigationStack.Navigator>
     </NavigationContainer>
   );
