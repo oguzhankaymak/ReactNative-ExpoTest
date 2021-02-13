@@ -20,7 +20,7 @@ const ShoppingCart = ({ onPressBtn, value }) => {
           zIndex: 2000,
         }}
       >
-        <Text style={{ color: "white", fontWeight: "bold" }}>2</Text>
+        <Text style={{ color: "white", fontWeight: "bold" }}>{value}</Text>
       </View>
       <Icon name="ios-cart" size={30} />
     </TouchableOpacity>

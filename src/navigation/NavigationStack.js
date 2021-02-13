@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -12,13 +13,18 @@ import CartScreen from "../screens/cartScreen/CartScreen";
 import ShoppingCart from "../components/shoppingCard/ShoppingCart";
 
 const Navigator = ({}) => {
+  const cartItem = useSelector((state) => state.cartItem.cartItem);
+
   return (
     <NavigationContainer>
       <NavigationStack.Navigator
         screenOptions={({ navigation }) => ({
           headerTitle: "Example Test App",
           headerRight: () => (
-            <ShoppingCart onPressBtn={() => navigation.navigate("cart")} />
+            <ShoppingCart
+              onPressBtn={() => navigation.navigate("cart")}
+              value={cartItem.length}
+            />
           ),
         })}
       >
