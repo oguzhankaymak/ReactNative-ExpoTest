@@ -15,7 +15,7 @@ const CartScreen = () => {
     <TouchableOpacity onPress={() => dispatch(CartItemActions.RemoveFromCart(item))} style={styles.card}>
       <View>
         <Text style={styles.text}>Product: {item.name}</Text>
-        <Text style={styles.text}>Unit Price: {item.price}</Text>
+        <Text style={styles.text}>Unit Price: {item.price} $</Text>
         <Text style={styles.text}>Quantity: {item.quantity}</Text>
       </View>
       <MaterialCommunityIcons name="delete-outline" size={30} color="#fff" />

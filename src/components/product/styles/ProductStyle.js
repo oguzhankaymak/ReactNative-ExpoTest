@@ -10,4 +10,8 @@ export default StyleSheet.create({
     padding: 20,
     marginVertical: 15,
   },
+
+  text: {
+    padding: 3,
+  },
 });
