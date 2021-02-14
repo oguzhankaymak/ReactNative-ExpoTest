@@ -10,6 +10,7 @@ const NavigationStack = createStackNavigator();
 import Home from "../screens/home/Home";
 import ElectronicsScreen from "../screens/electronicsScreen/ElectronicsScreen";
 import CartScreen from "../screens/cartScreen/CartScreen";
+import NoteListScreen from "../screens/noteListScreen/NoteListScreen";
 import ShoppingCart from "../components/shoppingCard/ShoppingCart";
 
 const Navigator = ({}) => {
@@ -37,6 +38,11 @@ const Navigator = ({}) => {
         })}
       >
         <NavigationStack.Screen name="home" component={Home} />
+        <NavigationStack.Screen
+          name="noteList"
+          component={NoteListScreen}
+          options={{ headerTitle: "Note List" }}
+        />
         <NavigationStack.Screen
           name="electronics"
           component={ElectronicsScreen}

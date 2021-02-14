@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import Layout from '../../components/layout/Layout';
 
-import styles from "./styles/styles";
-import AddItem from "../../components/item/AddItem";
-import ListItem from "../../components/item/ListItem";
+import styles from './styles/styles';
+import { AntDesign } from '@expo/vector-icons';
 
 const Home = ({ navigation }) => {
-  const [data, setdata] = useState([]);
+  const Item = ({ title, screen }) => (
+    <TouchableOpacity style={styles.item} onPress={() => navigation.navigate(screen)}>
+      <AntDesign name="rightcircleo" size={24} color="#fff" />
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
+  );
   return (
-    <View style={styles.container}>
-      <AddItem addItem={(newData) => setdata([...data, newData])} />
-      <ListItem
-        data={data}
-        removeData={(id) =>
-          setdata(data.filter((filterValue) => filterValue.id !== id))
-        }
-      />
+    <Layout>
       <View style={styles.main}>
-        <TouchableOpacity onPress={() => navigation.navigate("electronics")}>
-          <Text style={styles.text}>Electronics</Text>
-        </TouchableOpacity>
+        <View style={styles.header}>
+          <Text style={styles.title}>Options List</Text>
+        </View>
+        <Item title={'Note List'} screen={'noteList'} />
+        <Item title={'Electronics Products'} screen={'electronics'} />
       </View>
-    </View>
+    </Layout>
   );
 };
 
