@@ -1,20 +1,42 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  container: {
-    paddingTop: 40,
+  header: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 150,
+  },
+
+  title: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 80,
+    padding: 20,
+    borderRadius: 100,
+    fontSize: 25,
+    color: '#fff',
+    backgroundColor: '#36602c',
+  },
+
+  item: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#633ed5',
+    height: 60,
+    width: 250,
+    borderRadius: 100,
+    marginVertical: 20,
   },
 
   main: {
-    marginTop: 40,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   text: {
-    color: "blue",
+    color: '#fff',
     fontSize: 18,
-    textDecorationLine: "underline",
     padding: 10,
   },
 });
