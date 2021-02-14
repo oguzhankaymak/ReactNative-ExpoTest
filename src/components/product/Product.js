@@ -7,7 +7,11 @@ import styles from './styles/ProductStyle';
 const Product = ({ products, onPressBtn }) => {
   return products.map((item, index) => {
     return (
-      <TouchableOpacity onPress={() => onPressBtn(item)} key={String(index)} style={styles.card}>
+      <TouchableOpacity
+        onPress={() => onPressBtn(item)}
+        key={String(index)}
+        style={styles.card}
+        testID={'product' + index}>
         <View>
           <Text style={styles.text}>Product: {item.name}</Text>
           <Text style={styles.text}>Unit Price: {item.price} $</Text>
