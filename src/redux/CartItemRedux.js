@@ -17,9 +17,19 @@ export default Creators;
 
 //Reducers
 export const AddToCart = (state, action) => {
+  const inCart = state.cartItem.find((product) =>
+    product.id === action.cartItem.id ? true : false
+  );
+
   return {
     ...state,
-    cartItem: [...state.cartItem, action.cartItem],
+    cartItem: inCart
+      ? state.cartItem.map((item) =>
+          item.id === action.cartItem.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      : [...state.cartItem, { ...action.cartItem, quantity: 1 }],
   };
 };
 

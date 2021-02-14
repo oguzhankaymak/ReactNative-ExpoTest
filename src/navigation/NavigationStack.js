@@ -15,6 +15,14 @@ import ShoppingCart from "../components/shoppingCard/ShoppingCart";
 const Navigator = ({}) => {
   const cartItem = useSelector((state) => state.cartItem.cartItem);
 
+  const sumProductCountInBasket = () => {
+    var total = 0;
+    cartItem.forEach((product) => {
+      total += product.quantity;
+    });
+    return total;
+  };
+
   return (
     <NavigationContainer>
       <NavigationStack.Navigator
@@ -23,7 +31,7 @@ const Navigator = ({}) => {
           headerRight: () => (
             <ShoppingCart
               onPressBtn={() => navigation.navigate("cart")}
-              value={cartItem.length}
+              value={sumProductCountInBasket()}
             />
           ),
         })}
