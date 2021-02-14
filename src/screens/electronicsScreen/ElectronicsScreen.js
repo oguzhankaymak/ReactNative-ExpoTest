@@ -1,20 +1,21 @@
-import React from "react";
-import { View } from "react-native";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { View } from 'react-native';
+import { useDispatch } from 'react-redux';
 
-import CartItemActions from "../../redux/CartItemRedux";
-import { electronics } from "../../../Data";
-import Product from "../../components/product/Product";
+import CartItemActions from '../../redux/CartItemRedux';
+import { electronics } from '../../../Data';
+import Product from '../../components/product/Product';
+import Layout from '../../components/layout/Layout';
+import styles from './styles/ElectronicsScreenStyle';
 
 const ElectronicsScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   return (
-    <View style={{ flex: 1 }}>
-      <Product
-        products={electronics}
-        onPressBtn={(product) => dispatch(CartItemActions.AddToCart(product))}
-      />
-    </View>
+    <Layout>
+      <View style={styles.container}>
+        <Product products={electronics} onPressBtn={(product) => dispatch(CartItemActions.AddToCart(product))} />
+      </View>
+    </Layout>
   );
 };
 
