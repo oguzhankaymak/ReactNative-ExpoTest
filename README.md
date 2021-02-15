@@ -1,7 +1,7 @@
 # React-Native-Unit-Test
 
 <p align="center">
-  <h3 align="center">Social Media Analyzer</h3>
+  <h3 align="center">React Native Unit Test</h3>
   <p align="center">
     This application was created for learn how to write unit test.
   </p>
@@ -78,5 +78,6 @@ yarn run test --watch
 
 ## Screenshots
 
+![test](https://user-images.githubusercontent.com/36153454/107923416-87d13b00-6f82-11eb-8e5f-76532df4951b.png)
 
 
