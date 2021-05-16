@@ -49,7 +49,7 @@ This application was created for learn how to write unit test. Design, maintaina
 1. Clone the repository.
 
 ```sh
-git clone https://github.com/oguzhankaymak/React-Native-Unit-Test.git
+git clone https://github.com/oguzhankaymak/ReactNative-ExpoTest.git
 ```
 
 2. Install expo.
